@@ -53,7 +53,7 @@ export default async function HomePage() {
             <Link href="/classes" className="btn-primary px-8 py-4 text-lg">
               Book an English Class
             </Link>
-            <Link href="/programmes" className="btn-secondary px-8 py-4 text-lg border-white text-white hover:bg-white/10">
+            <Link href="/programmes" className="btn-secondary bg-transparent px-8 py-4 text-lg border-white text-white hover:bg-white/10">
               Explore Programmes
             </Link>
           </div>
