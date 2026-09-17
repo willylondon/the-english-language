@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { signOut } from 'next-auth/react';
-import { LayoutDashboard, ClipboardList, Calendar, Users, FileText, MessageSquare, Mail, LogOut, Menu, X, Globe } from 'lucide-react';
+import { LayoutDashboard, ClipboardList, Calendar, Users, FileText, MessageSquare, Mail, LogOut, Menu, X, Globe, Settings } from 'lucide-react';
 import { useState } from 'react';
 
 const NAV_LINKS = [
@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { href: '/admin/blog', label: 'Blog', icon: FileText },
   { href: '/admin/testimonials', label: 'Testimonials', icon: MessageSquare },
   { href: '/admin/messages', label: 'Messages', icon: Mail },
+  { href: '/admin/settings', label: 'Settings', icon: Settings },
 ];
 
 export function AdminSidebar() {

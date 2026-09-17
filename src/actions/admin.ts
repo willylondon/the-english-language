@@ -3,6 +3,7 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
+import bcrypt from 'bcryptjs';
 import { revalidatePath } from 'next/cache';
 import { sendBookingConfirmedEmail, sendBookingRejectedEmail } from '@/lib/email';
 import { classSchema, type ClassFormData, type BlogPostFormData, type TestimonialFormData } from '@/lib/validations';
@@ -215,4 +216,29 @@ export async function deleteMessage(id: string) {
   await checkAuth();
   await prisma.contactMessage.delete({ where: { id } });
   revalidatePath('/admin/messages');
+}
+
+export async function changePassword(currentPassword: string, newPassword: string) {
+  await checkAuth();
+
+  const session = await getServerSession(authOptions);
+  const email = session?.user?.email;
+  if (!email) throw new Error('Unauthorized');
+
+  if (!newPassword || newPassword.length < 10) {
+    return { success: false, error: 'New password must be at least 10 characters.' };
+  }
+
+  const admin = await prisma.adminUser.findUnique({ where: { email } });
+  if (!admin) return { success: false, error: 'Account not found.' };
+
+  const isValid = await bcrypt.compare(currentPassword, admin.passwordHash);
+  if (!isValid) return { success: false, error: 'Current password is incorrect.' };
+
+  await prisma.adminUser.update({
+    where: { email },
+    data: { passwordHash: await bcrypt.hash(newPassword, 10) },
+  });
+
+  return { success: true };
 }
