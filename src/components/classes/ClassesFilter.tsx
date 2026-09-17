@@ -78,7 +78,7 @@ export default function ClassesFilter({ initialClasses, programmes }: ClassesFil
                 <div className="bg-slate-50 p-4 rounded-md mb-4 space-y-2">
                   <div className="flex justify-between items-center text-sm">
                     <span className="text-slate-500 font-medium">Schedule:</span>
-                    <span className="font-semibold text-slate-900">{cls.dayOfWeek}s, {cls.startTime}-{cls.endTime}</span>
+                    <span className="font-semibold text-slate-900">{`${cls.dayOfWeek}s`}, {cls.startTime}-{cls.endTime}</span>
                   </div>
                   <div className="flex justify-between items-center text-sm">
                     <span className="text-slate-500 font-medium">Price:</span>

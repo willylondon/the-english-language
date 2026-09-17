@@ -141,7 +141,7 @@ export default async function HomePage() {
                     </span>
                     <h3 className="font-bold text-lg mb-2">{cls.title}</h3>
                     <div className="text-sm text-slate-600 mb-4 space-y-1 flex-grow">
-                      <p>{cls.dayOfWeek}s</p>
+                      <p>{`${cls.dayOfWeek}s`}</p>
                       <p>{cls.startTime} - {cls.endTime}</p>
                       <p className="font-semibold text-slate-900 mt-2">{formatPrice(cls.priceJMD)}</p>
                     </div>

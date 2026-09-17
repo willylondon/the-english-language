@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.SITE_URL || 'https://tutoring.farikaatkins.online'),
   title: {
     template: '%s | The English Language',
     default: 'The English Language | Expert English & Language Arts Tutoring in Jamaica',
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
     'CXC English tutoring',
     'CXC Literature exam preparation',
   ],
+  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'en_JM',
@@ -30,6 +32,8 @@ export const metadata: Metadata = {
     title: 'The English Language | Expert English & Literature Tutoring in Jamaica',
     description:
       'Expert English & Literature tutoring. CSEC English A & B, IGCSE, IB. Small group classes with exam-focused expertise.',
+    url: '/',
+    images: [{ url: '/farika.webp', width: 1200, height: 630, alt: 'Farika Atkins, Lead Educator' }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -105,7 +105,7 @@ export default async function ProgrammeDetailPage({ params }: { params: { slug: 
                   return (
                     <div key={cls.id} className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                       <h4 className="font-bold text-slate-900 mb-1">{cls.title}</h4>
-                      <p className="text-sm text-slate-600 mb-2">{cls.dayOfWeek}s, {cls.startTime}-{cls.endTime}</p>
+                      <p className="text-sm text-slate-600 mb-2">{`${cls.dayOfWeek}s`}, {cls.startTime}-{cls.endTime}</p>
                       <p className="font-semibold text-slate-900 mb-3">{formatPrice(cls.priceJMD)}</p>
                       <p className="text-xs text-slate-500 mb-3">{seats} seats remaining</p>
                       {seats > 0 ? (

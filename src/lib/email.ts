@@ -77,12 +77,36 @@ interface BookingEmailData {
 }
 
 async function sendEmail(to: string, subject: string, html: string): Promise<boolean> {
-  // In development without SMTP config, log the email
+  // Preferred: Resend HTTP API (works on serverless, no SMTP needed)
+  if (process.env.RESEND_API_KEY) {
+    try {
+      const resendFrom = `The English Language <lessons@${process.env.RESEND_EMAIL_DOMAIN || 'farikaatkins.online'}>`;
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ from: resendFrom, to, subject, html }),
+      });
+      if (!res.ok) {
+        const errText = await res.text();
+        console.error('Resend send failed:', res.status, errText);
+        return false;
+      }
+      return true;
+    } catch (error) {
+      console.error('Failed to send email via Resend:', error);
+      return false;
+    }
+  }
+
+  // Fallback: SMTP via nodemailer
   if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
     console.log('\n📧 EMAIL (dev mode - not sent):');
     console.log(`   To: ${to}`);
     console.log(`   Subject: ${subject}`);
-    console.log('   (Configure SMTP_USER and SMTP_PASS to send real emails)\n');
+    console.log('   (Configure RESEND_API_KEY or SMTP_USER/SMTP_PASS to send real emails)\n');
     return true;
   }
 
