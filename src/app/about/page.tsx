@@ -23,12 +23,12 @@ export default function AboutPage() {
       <div className="container-main section-padding">
         <section className="mb-24 flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3">
-            <div className="relative aspect-square w-full max-w-sm mx-auto overflow-hidden rounded-2xl shadow-xl border-4 border-white">
+            <div className="relative aspect-[4/5] w-full max-w-sm mx-auto overflow-hidden rounded-2xl shadow-xl border-4 border-white">
               <Image 
                 src="/farika.webp" 
                 alt="Farika Atkins — Lead Educator & Curriculum Specialist" 
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>

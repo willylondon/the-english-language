@@ -197,7 +197,7 @@ async function main() {
     {
       programmeSlug: 'essay-writing',
       title: 'Essay Writing Bootcamp (Grades 4–6)',
-      description: 'Build strong paragraph and essay structure skills. Perfect for PEP composition preparation.',
+      description: 'Build strong paragraph and essay structure skills. Students learn to plan, draft and revise compositions — from primary-level sentences to high-school argumentative essays.',
       dayOfWeek: 'Friday',
       startTime: '16:00',
       endTime: '17:15',
@@ -274,9 +274,9 @@ async function main() {
     {
       parentName: 'Mrs. Anderson',
       studentGrade: 'Grade 6',
-      programme: 'PEP Language Arts',
+      programme: 'Grades 4–6 Language Arts',
       rating: 5,
-      content: 'My daughter went from struggling with comprehension to scoring in the top band on her PEP mock exams. The small group size made all the difference — she finally felt comfortable asking questions. We couldn\'t be happier with her progress.',
+      content: 'My daughter went from struggling with comprehension to scoring in the top band on her practice exams. The small group size made all the difference — she finally felt comfortable asking questions. We couldn\'t be happier with her progress.',
       isPublished: true,
     },
     {
@@ -434,8 +434,8 @@ This leaves you with no buffer, so practice writing under timed conditions regul
     {
       title: '5 Comprehension Strategies Every Student Should Know',
       slug: '5-comprehension-strategies-every-student-should-know',
-      excerpt: 'Whether your child is preparing for PEP, CSEC, or IGCSE, these five comprehension strategies will help them read more effectively, understand more deeply, and answer more precisely.',
-      content: `Reading comprehension isn't just about understanding the words on the page. It's about engaging with the text actively, making connections, and constructing meaning. These five strategies work across all levels — from Grade 4 PEP preparation to IGCSE and IB literature.
+      excerpt: 'Whether your child is preparing for CSEC, IGCSE, or IB, these five comprehension strategies will help them read more effectively, understand more deeply, and answer more precisely.',
+      content: `Reading comprehension isn't just about understanding the words on the page. It's about engaging with the text actively, making connections, and constructing meaning. These five strategies work across all levels — from Grade 4 comprehension fundamentals to IGCSE and IB literature.
 
 Strategy 1: Pre-Reading — Survey Before You Dive In
 
@@ -492,8 +492,8 @@ Putting It All Together
 These strategies work best when practised regularly. Start with one strategy per week and gradually combine them. Within a month, they'll become second nature.
 
 Our Comprehension Skills programme teaches and practises these strategies systematically, with texts carefully selected to match each student's current level and target exam.`,
-      metaDescription: 'Five proven reading comprehension strategies for PEP, CSEC, and IGCSE students. Learn active reading, annotation, PEE method, inference, and vocabulary-in-context techniques.',
-      tags: 'comprehension,reading,study skills,PEP,CSEC,IGCSE',
+      metaDescription: 'Five proven reading comprehension strategies for CSEC, IGCSE, and IB students. Learn active reading, annotation, PEE method, inference, and vocabulary-in-context techniques.',
+      tags: 'comprehension,reading,study skills,CSEC,IGCSE',
       isPublished: true,
       publishedAt: new Date('2026-09-15'),
     },
@@ -511,7 +511,7 @@ Our Comprehension Skills programme teaches and practises these strategies system
   // ── Sample Bookings ────────────────────────────────────
   // Get first class for sample bookings
   const sampleClass = await prisma.class.findFirst({
-    where: { title: 'Grade 6 PEP Ability Test Prep' },
+    where: { title: 'Grade 6 Primary Exit Profile Prep' },
   });
 
   if (sampleClass) {
@@ -557,8 +557,8 @@ Our Comprehension Skills programme teaches and practises these strategies system
       name: 'Mrs. Stewart',
       email: 'stewart@example.com',
       phone: '876-555-0789',
-      subject: 'Grade 4 PEP preparation',
-      message: 'Good afternoon. I am interested in enrolling my daughter in PEP preparation classes. She is currently in Grade 4 at Meadowbrook Preparatory. Could you please provide more information about the schedule and fees? Thank you.',
+      subject: 'Grade 4 comprehension classes',
+      message: 'Good afternoon. I am interested in enrolling my daughter in comprehension classes. She is currently in Grade 4 at Meadowbrook Preparatory. Could you please provide more information about the schedule and fees? Thank you.',
     },
   });
   console.log('✅ Sample contact message');

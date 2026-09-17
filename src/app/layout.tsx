@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description:
       'Expert English & Literature tutoring. CSEC English A & B, IGCSE, IB. Small group classes with exam-focused expertise.',
     url: '/',
-    images: [{ url: '/farika.webp', width: 1200, height: 630, alt: 'Farika Atkins, Lead Educator' }],
+    images: [{ url: '/farika.webp', width: 1024, height: 1536, alt: 'Farika Atkins, Lead Educator' }],
   },
   twitter: {
     card: 'summary_large_image',
