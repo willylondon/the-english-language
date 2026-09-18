@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: 'Get in touch with us for inquiries, registration, or any questions about our English tutoring programmes.',
 };
 
+const WHATSAPP_GROUP_URL = ''; // TODO: paste the WhatsApp group invite (chat.whatsapp.com/...)
+
 export default function ContactPage() {
   return (
     <main className="container-main section-padding">
@@ -59,9 +61,16 @@ export default function ContactPage() {
               Prefer WhatsApp?
             </h3>
             <p className="text-slate-300 mb-6">Send us a message on WhatsApp for fast answers regarding course placement, schedule availability, or sibling discounts.</p>
-            <a href="https://wa.me/18762952776" target="_blank" rel="noopener noreferrer" className="btn-success w-full text-center inline-block py-3 rounded-lg font-medium">
-              Chat on WhatsApp
-            </a>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <a href="https://wa.me/18762952776" target="_blank" rel="noopener noreferrer" className="btn-success text-center inline-block py-3 rounded-lg font-medium">
+                Chat on WhatsApp
+              </a>
+              {WHATSAPP_GROUP_URL && (
+                <a href={WHATSAPP_GROUP_URL} target="_blank" rel="noopener noreferrer" className="block text-center py-3 rounded-lg font-medium border border-green-400/40 text-green-300 hover:bg-green-400/10 transition-colors">
+                  Join the Parent Group
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
